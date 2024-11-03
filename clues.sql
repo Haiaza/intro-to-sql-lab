@@ -68,3 +68,7 @@ SELECT name FROM cities WHERE id = '211';
 
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
+
+--The population is no higher than 91,085
+
+SELECT name, population FROM cities WHERE population > 91083 AND population < 91086;
