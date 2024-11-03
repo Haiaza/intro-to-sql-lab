@@ -3,7 +3,7 @@
 -- Write SQL query here
 -- use \dt countries to learn about the attributes inside the table
 
-SELECT name, population, FROM countries 
+SELECT name, population, code FROM countries 
 WHERE region 
 LIKE 'South%'
 AND continent = 'Europe'
@@ -13,11 +13,21 @@ ORDER BY population DESC;
 
 -- Write SQL query here
 
+-- i added on 'code' to my above selection to find the countryCode VAT
+
+
+SELECT language FROM countrylanguages WHERE countrycode = 'VAT';
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on to a different country, a country where people speak only the language she was learning. Find out which nearby country speaks nothing but that language.
 
 -- Write SQL query here
 
+--  OBJ Find a language where they speak nothing but 'Italian'
+    -- SELECT * from countrylanguages WHERE language = 'Italian';
+
+    SELECT * from countrylanguages WHERE language = 'Italian' AND percentage = 100;
+    SELECT code, name FROM countries WHERE code = 'SMR';
+    -- San Marino
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time. There are only two cities she could be flying to in the country. One is named the same as the country – that would be too obvious. We're following our gut on this one; find out what other city in that country she might be flying to.
 
